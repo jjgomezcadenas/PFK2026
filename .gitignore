@@ -1,0 +1,13 @@
+# LaTeX
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.out
+*.synctex.gz
+# macOS
+.DS_Store
+# Material de referencia pesado
+docs/PetaloConcepts.key
+figs/orig/
