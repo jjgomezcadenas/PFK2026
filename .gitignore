@@ -11,3 +11,5 @@
 # Material de referencia pesado
 docs/PetaloConcepts.key
 figs/orig/
+# PDF compilado (se regenera con pdflatex)
+unicornios.pdf
