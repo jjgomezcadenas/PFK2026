@@ -1,12 +1,15 @@
 % ¿Para qué sirven los unicornios?
 % Passion for Knowledge, Donostia 2026 — J.J. Gómez Cadenas (DIPC)
 % Borrador. Guion: Plan.md. Las figuras pendientes aparecen como cajas moradas.
-\documentclass[aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
 \beamertemplatenavigationsymbolsempty
-\usetheme{Boadilla}
+\usetheme{default}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-noshorthands]{babel}
+\usepackage{microtype}
+\usepackage[sfdefault]{plex-sans}      % cuerpo: IBM Plex Sans
+\usepackage{PlayfairDisplay}           % títulos: \playfair
 \usepackage{textpos}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
@@ -16,17 +19,27 @@
 
 \graphicspath{{figs/}{figs/fh/}{figs/dp2018/}{figs/petalo/}}
 
-\definecolor{uwopurple}{RGB}{79,38,131}
-\setbeamercolor{title in head/foot}{bg=white}
-\setbeamercolor{author in head/foot}{bg=white}
-\setbeamercolor{date in head/foot}{fg=uwopurple,bg=white}
-\setbeamercolor{title}{fg=uwopurple}
-\setbeamerfont{title}{series=\bfseries}
-\setbeamercolor{frametitle}{fg=uwopurple}
-\setbeamerfont{frametitle}{series=\bfseries}
-\setbeamercolor{block title}{bg=uwopurple!30,fg=black}
-\setbeamercolor{item}{fg=uwopurple}
-\setbeamercolor{caption name}{fg=uwopurple!70!}
+% ---------- paleta (propuesta de Claude Design) ----------
+\definecolor{azul}{RGB}{27,79,156}
+\definecolor{crema}{RGB}{251,248,244}
+\definecolor{tinta}{RGB}{28,22,32}
+\definecolor{grisc}{RGB}{105,100,105}
+\definecolor{uwopurple}{RGB}{27,79,156}   % el acento de la charla pasa a azul
+\colorlet{gray}{grisc}
+
+\setbeamercolor{background canvas}{bg=crema}
+\setbeamercolor{normal text}{fg=tinta}
+\setbeamercolor{frametitle}{fg=azul,bg=}
+\setbeamerfont{frametitle}{family=\playfair,series=\bfseries,size=\Large}
+\setbeamertemplate{frametitle}{\vspace*{0.55cm}\insertframetitle\vspace*{0.05cm}}
+\setbeamertemplate{footline}{}
+\setbeamersize{text margin left=1.1cm,text margin right=1.1cm}
+\setbeamercolor{item}{fg=azul}
+\setbeamercolor{block title}{bg=azul!15,fg=tinta}
+\setbeamercolor{caption name}{fg=azul}
+\setlength{\parskip}{1.2ex}
+\let\bulletviejo\bullet
+\renewcommand{\bullet}{\textcolor{azul}{\bulletviejo}}
 
 \title{¿Para qué sirven los unicornios?}
 \author[J.J. Gómez Cadenas]{J.J. Gómez Cadenas}
@@ -100,12 +113,17 @@
 % 0. TEASER
 % =====================================================================
 {
-\setbeamertemplate{logo}{}
-\begin{frame}
-  \titlepage
-  \begin{textblock*}{4cm}(0.5cm,-7.3cm)
-    \includegraphics[width=4cm]{dipc.png}
-  \end{textblock*}
+\setbeamercolor{background canvas}{bg=azul}
+\begin{frame}[plain]
+  \vspace*{1.6cm}
+  \hspace*{0.6cm}\begin{minipage}{0.8\textwidth}
+  {\color{white!75!azul}\scriptsize\textls[200]{PASSION FOR KNOWLEDGE \textperiodcentered\ DONOSTIA 2026}}\\[2ex]
+  {\color{white}\playfair\fontsize{34}{38}\selectfont ¿Para qué sirven los unicornios?}\\[3ex]
+  {\color{white!60!azul}\rule{1.8cm}{0.6pt}}\\[2ex]
+  {\color{white}\large\bfseries J.J. Gómez Cadenas}\\[0.8ex]
+  {\color{white!85!azul} Donostia International Physics Center}\\[4ex]
+  \colorbox{white}{\includegraphics[width=2.4cm]{dipc.png}}
+  \end{minipage}
 \end{frame}
 }
 
