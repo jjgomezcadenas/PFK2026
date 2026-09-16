@@ -67,6 +67,25 @@
   \filabase{#1}
   \foreach \x/\n in {#2} {\foreach \i in {1,...,\n} {\fill[uwopurple] (\x,#1+0.11*\i-0.09) rectangle (\x+0.2,#1+0.11*\i);}}
 }
+% Fantasma y núcleo para la doble beta (TikZ)
+\newcommand{\fantasma}[4][1]{% [opacidad]{x}{y}{escala}
+  \begin{scope}[shift={(#2,#3)},scale=#4,opacity=#1]
+    \filldraw[fill=white,draw=gray!70,thick,rounded corners=0.3pt]
+      (-0.5,0) -- (-0.5,0.55) arc (180:0:0.5) -- (0.5,0)
+      -- (0.33,-0.16) -- (0.17,0) -- (0,-0.16) -- (-0.17,0) -- (-0.33,-0.16) -- cycle;
+    \fill[black] (-0.18,0.62) circle (0.07) (0.18,0.62) circle (0.07);
+  \end{scope}}
+\newcommand{\nucleo}[2]{% {x}{y}
+  \begin{scope}[shift={(#1,#2)}]
+    \shade[ball color=gray!60] (-0.42,0.12) circle (0.27);
+    \shade[ball color=red!85!black] (0.05,0.45) circle (0.27);
+    \shade[ball color=gray!60] (0.45,0.15) circle (0.27);
+    \shade[ball color=gray!60] (-0.2,-0.38) circle (0.27);
+    \shade[ball color=red!85!black] (0.28,-0.35) circle (0.27);
+    \shade[ball color=red!85!black] (-0.36,0) circle (0.27);
+    \shade[ball color=red!85!black] (0.36,0) circle (0.27);
+  \end{scope}}
+\newcommand{\electron}[2]{\shade[ball color=blue!70!cyan] (#1,#2) circle (0.16);}
 % Frase grande centrada
 \newcommand{\frase}[1]{%
   \begin{center}\vspace{1.5cm}
@@ -274,7 +293,8 @@
 \begin{frame}{La lotería de Babilonia}
   \begin{columns}
   \column{0.4\textwidth}
-     \includegraphics[width=\textwidth]{torrebabel.jpg}
+   \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{torrebabel.jpg}
+    % \includegraphics[width=\textwidth]{torrebabel.jpg}
   \column{0.6\textwidth}
   
     $\bullet$~En el célebre relato de J.L. Borges, cualquier ciudadano babilonio puede ser, por un tiempo, cualquier cosa. El narrador ha vivido todas las condiciones humanas posibles debido a los sorteos: ha sido procónsul, esclavo, poseedor de un poder absoluto y prisionero condenado.
@@ -285,13 +305,28 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Una playa entre Donosti y Moscú}
+\begin{frame}{Contando granos de arena}
+  \begin{columns}
+  \column{0.5\textwidth}
+  \includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{beach.jpg}
+    % \includegraphics[width=\textwidth]{torrebabel.jpg}
+  \column{0.5\textwidth}
+  
+    $\bullet$~Las playas de Donosti contienen arena fina, cada grano tiene un diámetro de unos 0,25 mm. Si hacemos un agujero en la playa, encontramos agua como máximo al cabo de un metro. Supongamos que (en marea baja), las playas tienen unos 300 metros de ancho. Si juntamos Ondarreta, La Concha y Zurriola,  la longitud de playa es de unos 4,5 km. ¿Cuántos granos de arena contienen?
+    
+ $\bullet$~Muchos, ¿verdad? Concretamente,  $10^{17}$ granos.  
+  
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Una playa entre Donosti y Pekín}
   \begin{columns}
   \column{0.4\textwidth}
      \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{reactorNeutrinos.jpg}
   \column{0.6\textwidth}
 
-    $\bullet$~Un reactor nuclear es un infierno radioactivo encerrado en un búnker. Las desintegraciones en su interior producen $\sim 2 \times 10^{20}$  (doscientos trillones) neutrinos por segundo. Si cada neutrino fuera un grano de arena de La Concha, habría que extender la playa desde Donostia hasta Moscú para que cupieran todos.
+    $\bullet$~Un reactor nuclear es un infierno radioactivo encerrado en un búnker. Las desintegraciones en su interior producen $\sim 2 \times 10^{20}$  (doscientos trillones) neutrinos por segundo. Si cada neutrino fuera un grano de arena la playa se entendería desde Donostia hasta Pekín.
 
     $\bullet$~Un cubo de agua de diez metros de lado, situado a unos 50 metros del reactor, registra unas 370.000 interacciones al día. Cada vez que un <<neutrino>> interacciona con el agua se produce un <<electrón>>.
   \end{columns}
@@ -513,25 +548,28 @@ $\bullet$~Todos los agentes dobles favorecen, al final, a un bando más que a ot
 \end{frame}
 
 \begin{frame}{Doble o nada}
-
 \begin{columns}
-\column{0.5\textwidth}
-\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{doubleOrNothing.png}
+\column{0.4\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{escherHorsemen.png}
+\end{center}
+\column{0.6\textwidth}
+$\bullet$~¿Pero es realmente el neutrino su propia antipartícula?
 
-\column{0.5\textwidth}
+$\bullet$~Para demostrarlo, algunos físicos jugamos al juego de <<doble o nada>> en un casino subterráneo.
 
-$\bullet$~¿Pero es realmente el neutrino su propia antipartícula?  
-
-$\bullet$~Para demostrarlo, algunos físicos jugamos al juego de <<doble o nada>> en un casino subterráneo. 
- \end{columns}
-
+\vspace{1ex}
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.35\textheight,keepaspectratio]{doubleOrNothingCover.png}
+\end{center}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Desintegración doble beta sin neutrinos}
 
 \begin{columns}
 \column{0.5\textwidth}
-\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{doubleBetaDecay.png}
+\includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{double_beta_cartoon.png}
 
 \column{0.5\textwidth}
 
@@ -543,65 +581,160 @@ $\bullet$~La desintegración doble beta \emph{sin neutrinos}, ($\beta\beta0\nu$)
 
 \end{frame}
 
-\begin{frame}{Mucho más difícil que buscar una aguja en un pajar}
+
+\begin{frame}{El ángel y la montaña}
+  \begin{columns}
+  \column{0.4\textwidth}
+   \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{eternidad.png}
+   
+    % \includegraphics[width=\textwidth]{torrebabel.jpg}
+  \column{0.6\textwidth}
+  
+         $\bullet$~En la cosmología hindú aparece la metáfora de un ruiseñor que roza cada mil años con su ala una montaña hecha de hierro. Cuando la montaña se haya convertido en polvo, habrá pasado un instante en el tiempo de Dios. 
+
+
+%    $\bullet$~La metáfora es apropiada para describir el tiempo de la desintegración doble beta sin neutrinos. En caso de que exista, la <<vida media>> del proceso creemos que puede ser tan alta como $10^{27}$--$10^{28}$ años. 
+% 
+% $\bullet$~Por comparación la vida del universo es del orden de $1.4 \times 10^{10}$ años, o lo que es lo mismo
+% $4.3 \times 10^{17}$ segundos. 
+ 
+ $\bullet$~Supongamos un genio que alarga cada segundo de la vida del Universo para que sea tan largo como toda la vida del universo en años. Pues bien, ese es el tiempo promedio que necesitaría un átomo (por ejemplo de xenon) para desintegrarse via doble beta sin neutrinos. 
+ 
+  $\bullet$~Otra manera de verlo. Si cada año que tarda un átomo de xenon en desintegrarse doble beta fuera un grano de arena en nuestra playa, su longitud sería unas 3000 veces la distancia al sol (\emph{Playa de Babilonia}).
+
+ 
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Babilonia revisitada}
+  \begin{columns}
+  \column{0.4\textwidth}
+   \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{babilonia2.png}
+   
+    % \includegraphics[width=\textwidth]{torrebabel.jpg}
+  \column{0.6\textwidth}
+  
+  $\bullet$~¿Cómo es posible que un experimento pueda registrar una desintegración doble beta sin neutrinos? Se trata otra vez de la lotería de Babilonia. El xenon es un gas noble, presente (en trazas) en la atmósfera, que \emph{podría} desintegrarse vía $\beta\beta0\nu$. \emph{En una tonelada de xenon hay tantos átomos como granos de arena en la playa de Babilonia}
+         
+$\bullet$~ ¿Cual es el resultado de la lotería? Hay tantas papeletas como granos de arena en la playa de Babilonia y el juego se repite tantas veces como granos de arena en la playa de Babilonia. El resultado, asombrosamente, es del orden de uno. 
+
+$\bullet$~ Es decir, en una tonelada de xenon, esperamos que se produzca una desintegración doble beta sin neutrinos al año. ¿Podemos detectarla?
+
+          
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{La Tierra es un planeta muy radioactivo}
 
 \begin{columns}
-\column{0.5\textwidth}
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{pajar.jpg}
+\column{0.4\textwidth}
+\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{pajar.jpg}
 
-\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{beach.jpg}
+\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{donosti_pajar.png}
 
-\column{0.5\textwidth}
+\column{0.6\textwidth}
 
-$\bullet$~La desintegración $\beta\beta0\nu$, si existe, es tan rara, que el ruido de fondo debido a la radioactividad natural de la Tierra hace que detectarla sea \emph{mucho más difícil} que encontrar una aguja en un pajar. De hecho, viene a ser como encontrar un grano de arena de color azul en la playa de La Concha\dots\ ¡si La Concha llegara hasta Bilbao!  
+$\bullet$~Hay unos 4 gramos de uranio y unos 15 gramos de torio por cada tonelada de roca en la tierra. El uranio (y el torio) se desintegran naturalmente y producen un ruido de fondo a la desintegración doble beta que queremos observar, similar a un ruido estático bajo una señal de radio.   
 
+$\bullet$~Si el neutrino es una partícula de Majorana, esperamos observar una desintegración doble beta sin neutrinos al año en nuestro detector. 
+
+$\bullet$~Durante ese año, la radioactividad natural bombardea el detector con billones de fotones producidos por la radioactividad que pueden imitar la señal.  
+
+$\bullet$~Encontrar la señal de $\beta\beta0\nu$ es como buscar una aguja en un pajar... Pero el pajar sería tan grande como todo Donosti y la paja llegaría hasta los tejados! (unos tres o cuatro metros de altura). 
  \end{columns}
 
 \end{frame}
+
+%\begin{frame}{Mucho más difícil que buscar una aguja en un pajar}
+%
+%\begin{columns}
+%\column{0.5\textwidth}
+%\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{pajar.jpg}
+%
+%\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{beach.jpg}
+%
+%\column{0.5\textwidth}
+%
+%$\bullet$~La desintegración $\beta\beta0\nu$, si existe, es tan rara, que el ruido de fondo debido a la radioactividad natural de la Tierra hace que detectarla sea \emph{mucho más difícil} que encontrar una aguja en un pajar. De hecho, viene a ser como encontrar un grano de arena de color azul en la playa de La Concha\dots\ ¡si La Concha llegara hasta Bilbao!  
+%
+% \end{columns}
+%
+%\end{frame}
+%
+
+
+%
+%
+%\begin{frame}{El ángel y la montaña}
+%  \begin{columns}
+%  \column{0.4\textwidth}
+%   \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{torrebabel.jpg}
+%    % \includegraphics[width=\textwidth]{torrebabel.jpg}
+%  \column{0.6\textwidth}
+%  
+%    $\bullet$~En la cosmología hindú aparece la metáfora de un ruiseñor (otras veces es un ángel) que roza cada mil años con su ala una montaña hecha de hierro, o acaso de diamante. Cuando la montaña se haya convertido en polvo, asegura el relato, habrá pasado un instante en el tiempo de Dios. 
+%    
+%    $\bullet$~La metáfora es apropiada para describir el tiempo de la desintegración doble beta sin neutrinos. En caso de que exista, la <<vida media>> del proceso creemos que puede ser tan alta como $10^{27}$--$10^{28}$ años. 
+% 
+% $\bullet$~Pero la vida del universo es del orden de $10^{10}$ años. 
+% 
+% $\bullet$~Pero
+% 
+%  \end{columns}
+%\end{frame}
 
 \begin{frame}{NEXT (Neutrino Experiment with a Xenon TPC)}
 
 \begin{columns}
 \column{0.50\textwidth}
-\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{nexttraum.png}
+\includegraphics[width=\textwidth,height=0.43\textheight,keepaspectratio]{next-ia.png}
+
+\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{energy-balance.png}
+
 
  \column{0.50\textwidth}
-$\bullet$~NEXT es una cámara llena de xenón a alta presión, equipada con sensores muy precisos y muy radiopuros. El isótopo ${}^{136}$Xe puede desintegrarse vía $\beta\beta0\nu$ emitiendo dos electrones.
+ 
 
-$\bullet$~NEXT mide con gran fidelidad la señal de esos electrones. Eso permite separar la escasa señal (un suceso cada diez años con el detector actual; uno al año con diez veces más masa) del gigantesco ruido de fondo (millones de sucesos al año).
+$\bullet$~NEXT es una cámara llena de xenón a alta presión, equipada con sensores muy precisos y muy radiopuros. 
 
-\end{columns}
-\end{frame}
+$\bullet$~La señal de la desintegración $\beta\beta0\nu$ del xenon son dos electrones que \emph{se materializan} en algún punto de la cámara y cuya <<traza>> es registrada por los sensores.  
 
-\begin{frame}{Primeros prototipos}
-
-\begin{columns}
-\column{0.60\textwidth}
-\includegraphics[scale=0.28]{next-demo.png}
-
- \column{0.40\textwidth}
-$\bullet$~Entre 2009 y 2015 operamos dos prototipos: NEXT-DBDM en Berkeley y NEXT-DEMO en Valencia. El \emph{Traum} (sueño) se hizo \emph{Wirklichkeit} (realidad).
+$\bullet$~La energía de los dos electrones es siempre la misma e igual a la diferencia de masas entre el núcleo padre y el núcleo hijo. \emph{A diferencia de la desintegración beta aquí no falta energía porque no se emiten neutrinos}.
 
 \end{columns}
 \end{frame}
 
-\begin{frame}{NEXT-White}
+%\begin{frame}{Primeros prototipos}
+%
+%\begin{columns}
+%\column{0.60\textwidth}
+%\includegraphics[scale=0.28]{next-demo.png}
+%
+% \column{0.40\textwidth}
+%$\bullet$~Entre 2009 y 2015 operamos dos prototipos: NEXT-DBDM en Berkeley y NEXT-DEMO en Valencia. El \emph{Traum} (sueño) se hizo \emph{Wirklichkeit} (realidad).
+%
+%\end{columns}
+%\end{frame}
+%
+%\begin{frame}{NEXT-White}
+%
+%\begin{columns}
+%\column{0.60\textwidth}
+%\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{white.jpg}
+%
+% \column{0.40\textwidth}
+%$\bullet$~NEXT-White, bautizado en memoria de James White, fue el primer detector radiopuro de NEXT. Operó en el Laboratorio Subterráneo de Canfranc de 2016 a 2022.
+%
+%\end{columns}
+%\end{frame}
 
-\begin{columns}
-\column{0.60\textwidth}
-\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{white.jpg}
-
- \column{0.40\textwidth}
-$\bullet$~NEXT-White, bautizado en memoria de James White, fue el primer detector radiopuro de NEXT. Operó en el Laboratorio Subterráneo de Canfranc de 2016 a 2022.
-
-\end{columns}
-\end{frame}
-
-\begin{frame}{El castillo de plomo}
-
-\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{leadCastle.jpg}
-
-\end{frame}
+%\begin{frame}{El castillo de plomo}
+%
+%\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{leadCastle.jpg}
+%
+%\end{frame}
 
 \begin{frame}{Vasija a presión y blindaje interno de cobre}
 \begin{columns}
@@ -654,10 +787,31 @@ $\bullet$~NEXT-White, bautizado en memoria de James White, fue el primer detecto
 \column{0.50\textwidth}
 $\bullet$~Los experimentos en física de neutrinos llevan mucho tiempo y los experimentos de $\beta\beta0\nu$ todavía más, tanto que solemos medirlos en <<viajes a Ítaca>>, es decir, en unidades de veinte años. 
 
-$\bullet$~Los viajes que los experimentos realizan son parecidos a los de Ulises. Hay que pasar entre Escila y Caribdis (conseguir financiación, desarrollar una tecnología nueva), evitar que nos coman los cíclopes (competición con otros experimentos) y que nos hechicen poderosas ninfas (mantener la concentración durante décadas, sin despistarse con los cantos de sirena)\dots Todo para llegar a Ítaca, siempre sin saber si llegaremos.  
+$\bullet$~Durante ese viaje hay que pasar entre Escila y Caribdis (conseguir financiación, desarrollar una tecnología nueva), evitar que nos coman los cíclopes (competición con otros experimentos) y que nos hechicen poderosas ninfas (mantener la concentración durante décadas, sin despistarse con los cantos de sirena)\dots Todo para llegar a Ítaca, siempre sin saber si llegaremos.  
 
 \end{columns}
 \end{frame}
+
+
+\begin{frame}{Pero ¿para qué sirve todo esto?}
+\begin{columns}
+\column{0.40\textwidth}
+\includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{cities.png}
+
+\column{0.60\textwidth}
+$\bullet$~¿Necesita la sociedad preocuparse de si el neutrino es su propia antipartícula? ¿No sería mejor invertir el dinero en aplicaciones <<prácticas>>? 
+
+$\bullet$~Pero ¿qué son aplicaciones prácticas? ¿Es mejor invertir en iPhones más sofisticados que en entender mejor el mundo? ¿Qué mundo, exactamente, nos interesa?  
+
+$\bullet$~ En el DIPC, creemos, como nuestro presidente y fundador, Pedro Miguel Etxenique en la \emph{sublime utilidad de la ciencia inútil}.
+
+$\bullet$~ O, parafraseando a David Deutch: <<Si Atenas hubiera prevalecido sobre Esparta, ustedes y yo, queridos amigos, seríamos ya inmortales y habríamos llegado a las estrellas>>.
+
+\end{columns}
+\end{frame}
+
+
+
 
 \begin{frame}{Rilke}
   \begin{columns}[T]
@@ -675,6 +829,10 @@ $\bullet$~Los viajes que los experimentos realizan son parecidos a los de Ulises
   \vspace{1cm}
   \begin{center}
   \end{center}
+  
+  \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]{unicornios.png}
+
+  
 \end{frame}
 
 \end{document}
