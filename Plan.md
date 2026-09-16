@@ -304,3 +304,44 @@ Contenido:
   aplicaciones". Se justifica porque responde a Eddington, que pidió
   aplicaciones industriales. Actualizar tesis y decisiones.
 
+## Revisión final, segunda tanda (anotado 2026-09-16, nada por ahora)
+
+Versión de 45 transparencias con el final nuevo (ángel y montaña, Babilonia
+revisitada, pajar, Echenique y Deutsch). Erratas ya corregidas.
+
+Consistencia de la cadena de números (T15, T16, T36, T37, T38):
+- T15: tres playas de Donosti, 10^17 granos. T16: 2 x 10^20 granos llegan a
+  Pekín. Cuadran con `scripts/concha.py` (grano 0,25 mm, 1 m de arena).
+- T36/T37: la playa de Babilonia es 3000 veces la distancia al Sol, es decir
+  10^28 granos; una tonelada de Xe-136 tiene 4 x 10^27 átomos. Factor dos.
+- T37 dice "del orden de uno" al año y T38 "una al año"; el script
+  (`fondo_caverna.py`) con periodo 10^28 da 0,3. Decir "aproximadamente" en
+  T37 y "una cada pocos años" en T38, o fijar todo en 10^27.
+
+Contenido:
+- T36: la parábola del ave y la montaña es budista (el kalpa), no hindú, y
+  el ave no es un ruiseñor. Mejor "una vieja parábola oriental".
+- T38: el título ("La Tierra es un planeta muy radioactivo") no es el tema
+  (el pajar). Sobra la foto del pajar real; la de Donostia bajo paja basta.
+- T39 NEXT: "se materializan" no es correcto; los electrones salen del
+  núcleo de xenón. "Nacen en algún punto de la cámara".
+- T44: demasiado argumentativa para ser la penúltima (cuatro puntos, dos
+  citas, pregunta retórica sobre iPhones). La imagen de las dos ciudades y
+  "la sublime utilidad de la ciencia inútil" con la firma de Echenique
+  bastan. La cita de Deutsch es una paráfrasis; comprobar la fuente.
+  Comprobar grafía: Echenique o Etxenique.
+- T45 Rilke: desborda (imagen a 0,85 bajo la estrofa). La imagen merece ir
+  sola, con la estrofa pequeña encima, o ser la última sin texto.
+- T15: la foto de la playa queda pequeña (0,35) con tanto texto. El número
+  10^17 mejor en grande tras un clic.
+
+Formato y peso:
+- Desbordan: T17 Poltergeist (pendiente de antes), T38 (por poco), T45.
+- PNG del generador de 3 a 8 MB: `cities`, `eternidad`, `babilonia2`,
+  `donosti_pajar`, `next-ia`, `energy-balance`, `unicornios`,
+  `double_beta_cartoon`. A JPEG. El PDF pesa 80 MB.
+
+Sigue pendiente de la primera tanda: T8 redundante con los histogramas,
+rótulos de la balanza del tritio (T5), "(anti)" en Vandellós, figura
+técnica en "Sir Arthur".
+
