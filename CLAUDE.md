@@ -2,7 +2,7 @@
 
 ## Objetivo del proyecto
 
-Preparar una charla de **media hora** para el festival **Passion for Knowledge**
+Preparar una charla de **45 minutos** para el festival **Passion for Knowledge**
 (Donostia / San Sebastián, 2026).
 
 - **Audiencia:** gran público. Divulgación, sin formalismo ni ecuaciones innecesarias.
@@ -26,7 +26,13 @@ las transparencias.
 ## Estructura y compilación
 
 - `unicornios.tex`: transparencias. Una por latido de `Plan.md`. Las figuras
-  que faltan aparecen como cajas moradas (`\pendiente{...}`).
+  que faltan aparecen como cajas azules (`\pendiente{...}`).
+- Figuras nuevas: las de más de 500 KB se convierten a JPEG en `figs/` y el
+  original va a `figs/orig/` (fuera del repositorio). GIF y WebP se convierten
+  siempre, porque pdflatex no los lee.
+- Figuras generadas (ChatGPT): estilo gouache sobre papel crema, unicornios de
+  tapiz medieval en lugar de fantasmas, y nada de brillos, destellos ni
+  aspecto de render 3D.
 - `figs/fh/`: copias de `../LecturesFH`; `figs/dp2018/`: copias de
   `../donostiphys2018/img`; `figs/petalo/`: extraídas de `PetaloConcepts.pdf`.
   Los dos primeros directorios están separados porque hay nombres que solo
