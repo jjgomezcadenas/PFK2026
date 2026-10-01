@@ -165,16 +165,23 @@ antigua "¿Para qué sirven los unicornios?" (Echenique, Deutsch).
   diagrama del xenón, Sol, curva tumoral) se dejan como están.
 - Animaciones con `\visible`, solo donde la aparición por pasos es el
   argumento (trece transparencias).
+- "Radiactivo" en toda la charla, salvo en la carta de Pauli ("Queridas y
+  radioactivas damas y caballeros").
 - Formato: paleta y tipografía de la propuesta de Claude Design
   (`uniDesign.pdf`): fondo crema, azul de acento, IBM Plex Sans y Playfair
   Display, portada azul, sin pie de página, 10 pt.
 
 ## Pendiente (opcional)
 
-- Unificar "radiactivo" / "radioactivo".
 - Poltergeist: la segunda viñeta repite la idea del "(anti)".
+- "galaxia" (minúscula) frente a "Galaxia" (Club Galáctico).
 - Legibilidad al proyectar: curva tumoral, página del artículo en PTP, carta
   de Pauli.
+- Tras el ensayo: el bloque de aplicaciones es una progresión (mundanas →
+  científicas → ciencia ficción → crear universos) y no se recorta. Si se
+  alarga, fundir Tierra, Sol y galaxia en una transparencia con tres clics.
+  Ritmo: mundanas despacio, científicas deprisa (son repaso), ciencia ficción
+  con humor, crear universos como remate.
 
 ## Producción
 
